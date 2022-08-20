@@ -26,6 +26,8 @@
 		854A643B285DB04D00630064 /* PrimeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A643A285DB04D00630064 /* PrimeSource.swift */; };
 		858FC9FF2856228100E3C7DF /* Vacancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FC9FE2856228100E3C7DF /* Vacancy.swift */; };
 		858FCA0128562CB900E3C7DF /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCA0028562CB900E3C7DF /* Search.swift */; };
+		859D2CED28B178C8007C190C /* VacanciesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859D2CEC28B178C8007C190C /* VacanciesData.swift */; };
+		859D2CEF28B17A11007C190C /* VacancyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859D2CEE28B17A11007C190C /* VacancyManager.swift */; };
 		85B7A0CC2822DD7700508A9E /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B7A0CB2822DD7700508A9E /* WelcomeVC.swift */; };
 		85B7A0CE2823D46900508A9E /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B7A0CD2823D46900508A9E /* CreateVC.swift */; };
 		85B7A0D028251D7E00508A9E /* Welcome2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B7A0CF28251D7D00508A9E /* Welcome2.swift */; };
@@ -78,6 +80,8 @@
 		854A643A285DB04D00630064 /* PrimeSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeSource.swift; sourceTree = "<group>"; };
 		858FC9FE2856228100E3C7DF /* Vacancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacancy.swift; sourceTree = "<group>"; };
 		858FCA0028562CB900E3C7DF /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		859D2CEC28B178C8007C190C /* VacanciesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesData.swift; sourceTree = "<group>"; };
+		859D2CEE28B17A11007C190C /* VacancyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyManager.swift; sourceTree = "<group>"; };
 		85B7A0CB2822DD7700508A9E /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		85B7A0CD2823D46900508A9E /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
 		85B7A0CF28251D7D00508A9E /* Welcome2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome2.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 		8517B18A2819828700F0F1ED = {
 			isa = PBXGroup;
 			children = (
+				859D2CEB28B178A1007C190C /* Model */,
 				8517B1952819828700F0F1ED /* DiplomaWexUp */,
 				8517B1AC2819828A00F0F1ED /* DiplomaWexUpTests */,
 				8517B1B62819828A00F0F1ED /* DiplomaWexUpUITests */,
@@ -137,29 +142,12 @@
 		8517B1952819828700F0F1ED /* DiplomaWexUp */ = {
 			isa = PBXGroup;
 			children = (
-				8520E46728B0002600308B41 /* Vacancies */,
 				8517B1962819828700F0F1ED /* AppDelegate.swift */,
 				8517B1982819828700F0F1ED /* SceneDelegate.swift */,
-				8517B19A2819828700F0F1ED /* ViewController.swift */,
-				85B7A0CB2822DD7700508A9E /* WelcomeVC.swift */,
-				85B7A0CD2823D46900508A9E /* CreateVC.swift */,
-				85B7A0CF28251D7D00508A9E /* Welcome2.swift */,
-				85B7A0D128251DA000508A9E /* Welcome3.swift */,
-				85B7A0D328251DBC00508A9E /* AuthChoise.swift */,
-				85B7A0D528251DDB00508A9E /* Auth.swift */,
-				85B7A0D728251E1A00508A9E /* Registration.swift */,
-				85B7A0D928251E4000508A9E /* MainVC.swift */,
-				8517B19C2819828700F0F1ED /* Main.storyboard */,
-				85C3D6D128A51F27006CBC93 /* VacancyList.swift */,
-				854A643A285DB04D00630064 /* PrimeSource.swift */,
-				854A6434285DB02800630064 /* SberBank.swift */,
-				854A6436285DB03500630064 /* KolesaGroup.swift */,
-				854A6438285DB04300630064 /* KhanGroup.swift */,
-				854A6432285CFB5900630064 /* Account.swift */,
-				858FCA0028562CB900E3C7DF /* Search.swift */,
-				858FC9FE2856228100E3C7DF /* Vacancy.swift */,
 				8517B19F2819828900F0F1ED /* Assets.xcassets */,
-				8517B1A12819828900F0F1ED /* LaunchScreen.storyboard */,
+				859D2CEA28B16A18007C190C /* Controllers */,
+				859D2CE928B169E7007C190C /* Views */,
+				8520E46728B0002600308B41 /* Vacancies */,
 				8517B1A42819828900F0F1ED /* Info.plist */,
 			);
 			path = DiplomaWexUp;
@@ -190,6 +178,48 @@
 				8520E46C28B0102A00308B41 /* ProfileViewController.swift */,
 			);
 			path = Vacancies;
+			sourceTree = "<group>";
+		};
+		859D2CE928B169E7007C190C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8517B19C2819828700F0F1ED /* Main.storyboard */,
+				8517B1A12819828900F0F1ED /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		859D2CEA28B16A18007C190C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8517B19A2819828700F0F1ED /* ViewController.swift */,
+				85B7A0CB2822DD7700508A9E /* WelcomeVC.swift */,
+				85B7A0CD2823D46900508A9E /* CreateVC.swift */,
+				85B7A0CF28251D7D00508A9E /* Welcome2.swift */,
+				85B7A0D128251DA000508A9E /* Welcome3.swift */,
+				85B7A0D328251DBC00508A9E /* AuthChoise.swift */,
+				85B7A0D528251DDB00508A9E /* Auth.swift */,
+				85B7A0D728251E1A00508A9E /* Registration.swift */,
+				85B7A0D928251E4000508A9E /* MainVC.swift */,
+				85C3D6D128A51F27006CBC93 /* VacancyList.swift */,
+				854A643A285DB04D00630064 /* PrimeSource.swift */,
+				854A6434285DB02800630064 /* SberBank.swift */,
+				854A6436285DB03500630064 /* KolesaGroup.swift */,
+				854A6438285DB04300630064 /* KhanGroup.swift */,
+				854A6432285CFB5900630064 /* Account.swift */,
+				858FCA0028562CB900E3C7DF /* Search.swift */,
+				858FC9FE2856228100E3C7DF /* Vacancy.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		859D2CEB28B178A1007C190C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				859D2CEC28B178C8007C190C /* VacanciesData.swift */,
+				859D2CEE28B17A11007C190C /* VacancyManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,9 +364,11 @@
 				8517B19B2819828700F0F1ED /* ViewController.swift in Sources */,
 				85B7A0DA28251E4000508A9E /* MainVC.swift in Sources */,
 				858FC9FF2856228100E3C7DF /* Vacancy.swift in Sources */,
+				859D2CEF28B17A11007C190C /* VacancyManager.swift in Sources */,
 				85B7A0CE2823D46900508A9E /* CreateVC.swift in Sources */,
 				854A6437285DB03500630064 /* KolesaGroup.swift in Sources */,
 				8517B1972819828700F0F1ED /* AppDelegate.swift in Sources */,
+				859D2CED28B178C8007C190C /* VacanciesData.swift in Sources */,
 				85B7A0D228251DA000508A9E /* Welcome3.swift in Sources */,
 				8517B1992819828700F0F1ED /* SceneDelegate.swift in Sources */,
 				85B7A0D828251E1A00508A9E /* Registration.swift in Sources */,
