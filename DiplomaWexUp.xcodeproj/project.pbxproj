@@ -36,6 +36,8 @@
 		85B7A0D628251DDB00508A9E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B7A0D528251DDB00508A9E /* Auth.swift */; };
 		85B7A0D828251E1A00508A9E /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B7A0D728251E1A00508A9E /* Registration.swift */; };
 		85B7A0DA28251E4000508A9E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B7A0D928251E4000508A9E /* MainVC.swift */; };
+		85C1DB9E28B2661000699BFA /* StudentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1DB9D28B2661000699BFA /* StudentsData.swift */; };
+		85C1DBA128B2662200699BFA /* StudentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1DBA028B2662200699BFA /* StudentsManager.swift */; };
 		85C3D6D228A51F28006CBC93 /* VacancyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C3D6D128A51F27006CBC93 /* VacancyList.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		85B7A0D528251DDB00508A9E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		85B7A0D728251E1A00508A9E /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		85B7A0D928251E4000508A9E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		85C1DB9D28B2661000699BFA /* StudentsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsData.swift; sourceTree = "<group>"; };
+		85C1DBA028B2662200699BFA /* StudentsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsManager.swift; sourceTree = "<group>"; };
 		85C3D6D128A51F27006CBC93 /* VacancyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +222,8 @@
 			children = (
 				859D2CEC28B178C8007C190C /* VacanciesData.swift */,
 				859D2CEE28B17A11007C190C /* VacancyManager.swift */,
+				85C1DB9D28B2661000699BFA /* StudentsData.swift */,
+				85C1DBA028B2662200699BFA /* StudentsManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85C3D6D228A51F28006CBC93 /* VacancyList.swift in Sources */,
+				85C1DB9E28B2661000699BFA /* StudentsData.swift in Sources */,
 				854A643B285DB04D00630064 /* PrimeSource.swift in Sources */,
 				858FCA0128562CB900E3C7DF /* Search.swift in Sources */,
 				85B7A0D428251DBC00508A9E /* AuthChoise.swift in Sources */,
@@ -376,6 +383,7 @@
 				85B7A0D628251DDB00508A9E /* Auth.swift in Sources */,
 				8520E46D28B0102A00308B41 /* ProfileViewController.swift in Sources */,
 				854A6433285CFB5A00630064 /* Account.swift in Sources */,
+				85C1DBA128B2662200699BFA /* StudentsManager.swift in Sources */,
 				8520E46A28B0007400308B41 /* VacanciesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,18 +7,14 @@
 
 import UIKit
 
-class VacancyList: UIViewController, UITableViewDataSource, UITableViewDelegate{ //VacancyManagerDelegate{
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "Вакансии"
-//    }
+class VacancyList: UIViewController, UITableViewDataSource, UITableViewDelegate{
     let idCell = "Vacancy"
-    //var vacancyManager = VacancyManager()
+    let vacancyGet = VacGet()
+    let studentGet = StudGet()
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeRequest2()
-        //makeRequest()
         tableView.dataSource = self
         tableView.delegate = self
         //vacancyManager.delegate = self
@@ -30,9 +26,6 @@ class VacancyList: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
         let btnProfile = UIBarButtonItem(title: "Профиль", style: .plain, target: self, action: #selector(goToProfile))
         navigationItem.rightBarButtonItem = btnProfile
-    }
-    private func makeRequest(){
-        //var request = URLRequest(url: URL(string: ""))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) //вызывается всегда, когда мы переопределяем метод
@@ -67,18 +60,10 @@ class VacancyList: UIViewController, UITableViewDataSource, UITableViewDelegate{
         default:
             print("Nope")
         }
-        
-//        print("\(indexPath.row)")
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! VacanciesTableViewCell
         
-        
-        /*cell.titleLabel.text = "Junior web - разработчик"
-        cell.suTitleLabel.text = "PrimeSource"
-        cell.specialityLabel.text = "Разработка"
-        cell.cityLabel.text = "Алматы"
-        cell.scheduleLabel.text = "Полный день"*/
         switch indexPath.row{
         case 0:
             cell.titleLabel.text = "Junior web - разработчик"
@@ -135,28 +120,5 @@ class VacancyList: UIViewController, UITableViewDataSource, UITableViewDelegate{
         swipeMore.backgroundColor = UIColor.systemGreen
         return UISwipeActionsConfiguration(actions: [swipeMore])
     }
-    private func makeRequest2(){
-        let urlString = "http://wexup.kz:8000/api/vacancies/"
-         
-        if let url = URL(string: urlString) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, response, error in
-                if error != nil {
-                    print("Error AAAAAAA \(error!) AAAAAAA")
-                    return
-                }
-                if let safeData = data {
-                    let dataString = String(data: safeData, encoding: .utf8)
-                    print(dataString as Any)
-                }
-            }
-            task.resume()
-        }
-    }
     
 }
-//extension VacancyList: UISearchBarDelegate{
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        
-//    }
-//}

@@ -1,40 +1,33 @@
-////
-////  VacanciManager.swift
-////  DiplomaWexUp
-////
-////  Created by Ayan on 8/21/22.
-////
 //
-//import Foundation
+//  VacanciManager.swift
+//  DiplomaWexUp
 //
-//protocol VacancyManagerDelegate {
-//    
-//}
+//  Created by Ayan on 8/21/22.
 //
-//struct VacancyManager{
-//    
-//    var delegate: VacancyManagerDelegate?
-//    
-//    let vacancyURL = "http://wexup.kz:8000/api/vacancies/"
-//    func performRequest(){
-//        let url = URL(string: vacancyURL)
-//        guard url != nil else{
-//            return
-//        }
-//        let session = URLSession.shared
-//        let dataTask = session.dataTask(with: url!) { data, response, error in
-//            if error == nil && data != nil{
-//                let decoder = JSONDecoder()
-//                    do {
-//                        let vacancyData = try
-//                        decoder.decode(VacancyData.self, from: data!)
-//                        print(vacancyData)
-//                    }
-//                    catch{
-//                        print("Error!!!!!!!!!")
-//                    }
-//            }
-//        }
-//        dataTask.resume()
-//    }
-//}
+
+import Foundation
+
+struct VacGet{
+    
+    func takeVacancy(){
+        let urlString = "http://wexup.kz:8000/api/vacancies/"
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let vacancyData = data else {return}
+//            let jsonString = String(data: data, encoding: .utf8)
+//            print(jsonString)
+            do{
+                let vacancy = try JSONDecoder().decode([VacancyData].self, from: vacancyData)
+                print(vacancy.first?.wage as Any)
+            }
+            catch{
+                print(error)
+            }
+        }.resume()
+    }
+}
