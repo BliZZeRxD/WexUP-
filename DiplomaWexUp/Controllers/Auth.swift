@@ -11,10 +11,12 @@ class Auth: UIViewController, UITextFieldDelegate {
 //    let emailFromSite = StudGet()
 //    let vacInfo = VacGet().takeVacancy()
     //var passwordFromSite: () = StudGet().takeStudentPassword()
-   
+   var enteredEmail = ""
+    var eneteredPass = ""
     @IBOutlet weak var textF1: UITextField!
     @IBOutlet weak var textF2: UITextField!
     var email =  "";
+    private var currentTextField: UITextField?
     func takeStudentEmail(){
         let urlstring = "http://wexup.kz:8000/api/users/students/"
         guard let url = URL(string: urlstring) else {return}
@@ -51,15 +53,16 @@ class Auth: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    @IBAction func openMain(_ sender: Any) {
-       
-        let emailTextField = textF1.text
-        if emailTextField != nil {
-            print(emailTextField)
-        }
+    @IBAction func openMain(_ sender: UIButton) {
+        if let currentTextField = currentTextField {
+                currentTextField.resignFirstResponder()
+            }
+            print(enteredEmail)
+            print(eneteredPass)
     }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        <#code#>
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        currentTextField = textField
+
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
@@ -70,6 +73,20 @@ class Auth: UIViewController, UITextFieldDelegate {
         else
         {textField.resignFirstResponder()}
         return false
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField.tag {
+
+                case 1:
+            enteredEmail = textField.text!
+                    print(enteredEmail)
+                case 2:
+
+                    eneteredPass = textField.text!
+                    print(eneteredPass)
+
+                default: break
+                }
     }
 //    func compareWithSite(){
 //        if textF1.text == email {
